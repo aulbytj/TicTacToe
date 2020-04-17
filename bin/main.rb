@@ -12,10 +12,9 @@ puts 'Player_1 choose your number'
 puts 'Player_2 choose your number'
 # get player_2's number
 
-#repeat steps above until there's a winner or no more moves
+# repeat steps above until there's a winner or no more moves
 puts 'Game over!'
-#if no more moves display "Game ended in a draw"
+# if no more moves display "Game ended in a draw"
 puts 'Game eneded in a Draw!'
-#if a player won then display which player won
+# if a player won then display which player won
 puts 'Winner is Player!'
-
