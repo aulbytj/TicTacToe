@@ -33,6 +33,7 @@ puts 'Please enter a valid name of letters only no numbers'
 # assigns letter 0 to player_2
 
 # then the Games class displays the games board to the screen with numbered squares 0 - 8
+# loop following actions until there is a winner or draw/tie
 # ask user that is player_1 to choose a number
 puts 'Player_1 choose your number'
 # checks that the number Player one selected is available 0 - 8
