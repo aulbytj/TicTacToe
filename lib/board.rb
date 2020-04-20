@@ -16,5 +16,18 @@ class Board
     end
     false
   end
+
+  def move(number, character)
+    false unless is_cell_available?(number)
+    @cells.each do |row|
+      row.each_index do |index|
+        if row[index] === number
+          row[index] = character
+          return true
+        end
+      end
+    end
+  end
 end
+
 
