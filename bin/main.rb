@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+require ../lib/board.rb
+require ../lib/player.rb
+
+
 class Game
 # three classes that will be use are the Player class that stores user names
 # assigns that to either player_1 or player_2 and validates names given by users
@@ -9,6 +13,10 @@ class Game
 
 # Game class with print all messages to the screen
 # initialize the game and end the game
+  def initialize player, board
+    @player = player
+    @board = board
+  end
 
 # Game class initializes the
 # prints the introduction
@@ -17,6 +25,7 @@ puts 'Hi! Welcome to play Tic Tac Toe'
 
 # then Game class ask for the users name
 puts 'Player 1 enter your name'
+@player = gets.chomp
 # the user input ins validated to ensure that the users enter a valid name
 # if the player enters an invalid user name, Error message is displayed
 puts 'Please enter a valid name of letters only no numbers'
