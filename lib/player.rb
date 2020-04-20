@@ -1,13 +1,20 @@
 class Player
   @@player = {}
-  @@player_count = 0
+  @@count = 0
+  @character
   attr_reader :name
   attr_writer :name
-  def initialize name 
+  attr_reader :character
+  def initialize name
     begin
       raise 'Not a vaild name, must be a string' unless name_is_valid?(name)
       @name = name
-      @@player_count += 1
+      @@count += 1
+      if @@count == 1
+        @character = 'X'
+      else
+        @character = 'O'
+      end
     end
   end
 
@@ -18,17 +25,12 @@ class Player
        false
     end
   end
-
-  def assign_player_character
-    if name_is_valid? && player_count == 1
-      @@player[name] = 'X'
-    elsif name_is_valid? && player_count == 2
-      @@player[name] = 'O'
-    end
-  end
 end
 
 
 
-me = Player.new(12)
-print me
+me = Player.new("jay")
+you = Player.new('stacy')
+print me.character
+print you.character
+
