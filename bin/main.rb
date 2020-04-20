@@ -33,35 +33,38 @@ puts 'Please enter a valid name of letters only no numbers'
 # assigns letter 0 to player_2
 
 # then the Games class displays the games board to the screen with numbered squares 0 - 8
-# loop following actions until there is a winner or draw/tie
-# ask user that is player_1 to choose a number
-puts 'Player_1 choose your number'
-# checks that the number Player one selected is available 0 - 8
-# if number selected by player one is not valid/in range 0 - 8
-# prompt player_1 to choose a valid number 0 - 8
-# if it is available 0 - 8, gets player_1's number
-# replaces the number with an X
-# remove number chosen from valid numbers
-#
-# ask user that is player_2 to choose a number
-puts 'Player_2 choose your number'
-# checks that the number Player_2 one selected is available 0 - 8 minus player_1's choice
-# if number selected by player_2 one is not valid/in range 0 - 8 minus player_1's choice
-# prompt player_1 to choose a valid number 0 - 8 minus player_1's choice
-# if number selected by player_2 is a number already chosen
-# prompt player_2 that that number was already chosen please
-# if it is available 0 - 8, gets player_1's number
-# replaces the number with an X
-# removes number from valid numbers
-#
-# check board after every players moves and compares it to a array with all possible
-# winning sequences
-# repeat steps above until there's a winner or no more moves
-puts 'Game over!'
-# if there is no more available numbers in valid numbers and no match to any winning sequences
-# prompt users that the games resulted to a draw
-puts 'Game eneded in a Draw!'
-#  if after a user had selected a valid number from remaining valid numbers
-#  and matched a winning sequence from winning sequences prompt that that
-#  player won the game
-puts 'Winner is Player!'
+until gameover || draw
+  # loop following actions until there is a winner or draw/tie
+  # ask user that is player_1 to choose a number
+  puts 'Player_1 choose your number'
+  # checks that the number Player one selected is available 0 - 8
+  # if number selected by player one is not valid/in range 0 - 8
+  # prompt player_1 to choose a valid number 0 - 8
+  # if it is available 0 - 8, gets player_1's number
+  # replaces the number with an X
+  # remove number chosen from valid numbers
+  #
+  # ask user that is player_2 to choose a number
+  puts 'Player_2 choose your number'
+  # checks that the number Player_2 one selected is available 0 - 8 minus player_1's choice
+  # if number selected by player_2 one is not valid/in range 0 - 8 minus player_1's choice
+  # prompt player_1 to choose a valid number 0 - 8 minus player_1's choice
+  # if number selected by player_2 is a number already chosen
+  # prompt player_2 that that number was already chosen please
+  # if it is available 0 - 8, gets player_1's number
+  # replaces the number with an X
+  # removes number from valid numbers
+  #
+  # check board after every players moves and compares it to a array with all possible
+  # winning sequences
+  # repeat steps above until there's a winner or no more moves
+  puts 'Game over!'
+  # if there is no more available numbers in valid numbers and no match to any winning sequences
+  # prompt users that the games resulted to a draw
+  puts 'Game eneded in a Draw!'
+  #  if after a user had selected a valid number from remaining valid numbers
+  #  and matched a winning sequence from winning sequences prompt that that
+  #  player won the game
+  puts 'Winner is Player!'
+end
+
