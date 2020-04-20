@@ -60,10 +60,12 @@ until gameover || draw
   # repeat steps above until there's a winner or no more moves
   puts 'Game over!'
   # if there is no more available numbers in valid numbers and no match to any winning sequences
+  # break out of loop
   # prompt users that the games resulted to a draw
   puts 'Game eneded in a Draw!'
   #  if after a user had selected a valid number from remaining valid numbers
   #  and matched a winning sequence from winning sequences prompt that that
+  #  break out of loop
   #  player won the game
   puts 'Winner is Player!'
 end
