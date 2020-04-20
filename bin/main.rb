@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+class Game
 # three classes that will be use are the Player class that stores user names
 # assigns that to either player_1 or player_2 and validates names given by users
 
@@ -69,3 +70,5 @@ until gameover || draw
   #  player won the game
   puts 'Winner is Player!'
 end
+end
+
