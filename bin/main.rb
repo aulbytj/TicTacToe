@@ -67,4 +67,3 @@ until gameover || draw
   #  player won the game
   puts 'Winner is Player!'
 end
-
