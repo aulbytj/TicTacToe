@@ -1,4 +1,5 @@
 class Board
+  @moves
   attr_reader :cells
 
   def initialize
@@ -7,6 +8,8 @@ class Board
         [4, 5, 6],
         [7, 8, 9]
     ]
+
+    @moves = 0
   end
 
   def is_cell_available?(number)
@@ -18,17 +21,22 @@ class Board
   end
 
   def move(number, character)
-    false unless is_cell_available?(number)
+    return -1 unless is_cell_available?(number)
     @cells.each do |row|
       row.each_index do |index|
         if row[index] === number
           row[index] = character
-          return true
+          @moves += 1
+          if @moves > 2
+            return 1 if check_win?(character)
+          end
         end
       end
     end
+    0
   end
 
+  private
   def check_win_rows?(character)
     @cells.each do | row |
       count = 0
@@ -44,6 +52,7 @@ class Board
     false
   end
 
+  private
   def check_win_columns?(character)
     (0..2).each { |j|
       count = 0
@@ -59,6 +68,7 @@ class Board
     false
   end
 
+  private
   def check_win_diagonals?(character)
     count = 0
     (0..2).each do |i|
@@ -72,6 +82,7 @@ class Board
     false
   end
 
+  private
   def check_win_rev_diagonals?(character)
     count = 0
     i = @cells.length - 1
@@ -89,6 +100,15 @@ class Board
     end
     false
   end
+
+  def check_win?(character)
+    return true if check_win_rows?(character)
+    return true if check_win_columns?(character)
+    return true if check_win_diagonals?(character)
+    return true if check_win_rev_diagonals?(character)
+    false
+  end
 end
+
 
 
