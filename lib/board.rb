@@ -58,6 +58,37 @@ class Board
     }
     false
   end
+
+  def check_win_diagonals?(character)
+    count = 0
+    (0..2).each do |i|
+      if @cells[i][i] === character
+        count += 1
+        return true if count === 3
+      else
+        count -= 1 if count
+      end
+    end
+    false
+  end
+
+  def check_win_rev_diagonals?(character)
+    count = 0
+    i = @cells.length - 1
+    j = 0
+    while i >= 0 do
+      p @cells[j][i]
+      if @cells[j][i] === character
+        count += 1
+        return true if count === 3
+      else
+        count -= 1 if count
+      end
+      i -= 1
+      j += 1
+    end
+    false
+  end
 end
 
 
