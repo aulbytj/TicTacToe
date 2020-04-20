@@ -43,5 +43,21 @@ class Board
     end
     false
   end
+
+  def check_win_columns?(character)
+    for j in 0..2
+      count = 0
+      for i in 0..2
+        if @cells[i][j] === character
+          count += 1
+          return true if count === 3
+        else
+          count -= 1 if  count
+        end
+      end
+    end
+    false
+  end
 end
+
 
