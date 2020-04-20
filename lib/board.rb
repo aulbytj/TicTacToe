@@ -28,6 +28,20 @@ class Board
       end
     end
   end
-end
 
+  def check_win_rows?(character)
+    @cells.each do | row |
+      count = 0
+      row.each do |cell|
+        if cell === character
+          count += 1
+          return true if count === 3
+        else
+          count -= 1 if count
+        end
+      end
+    end
+    false
+  end
+end
 
