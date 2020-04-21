@@ -1,10 +1,13 @@
 #!/usr/bin/env ruby
 
-require ../lib/board.rb
-require ../lib/player.rb
+require_relative '../lib/board'
+require_relative '../lib/player'
 
 
 class Game
+  @players = []
+  @current_player = 0
+  @board
 # three classes that will be use are the Player class that stores user names
 # assigns that to either player_1 or player_2 and validates names given by users
 
