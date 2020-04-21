@@ -21,6 +21,7 @@ class Board
   end
 
   def move(number, character)
+    return -2 if @moves >= 9
     return -1 unless is_cell_available?(number)
     @cells.each do |row|
       row.each_index do |index|
