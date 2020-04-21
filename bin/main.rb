@@ -16,9 +16,18 @@ class Game
 
 # Game class with print all messages to the screen
 # initialize the game and end the game
-  def initialize player, board
-    @player = player
-    @board = board
+  def initialize
+    set_players
+  end
+
+  private
+  def set_players
+    while @players.length < 2
+      puts "Player #{@current_player + 1} enter your name: "
+      name = gets.chomp
+      player = Player.new(name)
+      @players << player
+    end
   end
 
 # Game class initializes the
