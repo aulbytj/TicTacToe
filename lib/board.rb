@@ -20,8 +20,12 @@ class Board
     false
   end
 
+  def draw
+    p @cells
+  end
+
+  public
   def move(number, character)
-    return -2 if @moves >= 9
     return -1 unless is_cell_available?(number)
     @cells.each do |row|
       row.each_index do |index|
@@ -35,6 +39,14 @@ class Board
       end
     end
     0
+  end
+
+  public
+  def has_moves?
+    if @moves < 9
+      return true
+    end
+    false
   end
 
   private
