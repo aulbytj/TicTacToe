@@ -7,7 +7,6 @@ class Player
   attr_reader :name
   attr_writer :name
   attr_reader :character
-  attr_reader :players
 
   def initialize(name)
     begin
@@ -16,11 +15,7 @@ class Player
       @name = name
       @@players << name
       @@count += 1
-      if @@count == 1
-        @character = 'X'
-      else
-        @character = 'O'
-      end
+      @character = @@count === 1 ? 'X' : 'O'
     end
   end
 
