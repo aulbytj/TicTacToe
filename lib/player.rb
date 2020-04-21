@@ -1,22 +1,21 @@
 class Player
   @@players = []
-  @@count = 0
-
   @character
 
   attr_reader :name
-  attr_writer :name
   attr_reader :character
 
-  def initialize(name)
+  def initialize(name, character)
     begin
       raise 'Not a valid name, must be a string' unless name_is_valid?(name)
       raise 'Name already selected' if @@players.any?(name)
       @name = name
-      @@players << name
-      @@count += 1
-      @character = @@count === 1 ? 'X' : 'O'
+      @character = character
     end
+  end
+
+  def self.players
+    @@players
   end
 
   def name_is_valid?(name)
@@ -28,11 +27,4 @@ class Player
   end
 end
 
-
-
-me = Player.new("jay")
-you = Player.new('stacy')
-
-print me.character
-print you.character
 
