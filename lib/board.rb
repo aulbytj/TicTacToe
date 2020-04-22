@@ -3,9 +3,9 @@ class Board
 
   def initialize
     @cells = [
-      [1, 2, 3],
-      [4, 5, 6],
-      [7, 8, 9]
+        [1, 2, 3],
+        [4, 5, 6],
+        [7, 8, 9]
     ]
 
     @moves = 0
@@ -47,7 +47,7 @@ class Board
   end
 
   def check_win_rows?(character)
-    @cells.each do | row |
+    @cells.each do |row|
       count = 0
       row.each do |cell|
         if cell == character
@@ -62,15 +62,17 @@ class Board
   end
 
   def check_win_columns?(character)
-    (0..2).each |j|
+    (0..2).each do |j|
       count = 0
-      (0..2).each |i|
+      (0..2).each do |i|
         if @cells[i][j] == character
           count += 1
           return true if count == 3
         elsif count
           count -= 1
         end
+      end
+    end
     false
   end
 
