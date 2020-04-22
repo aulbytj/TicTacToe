@@ -1,54 +1,45 @@
 #!/usr/bin/env ruby
 
+require_relative '../lib/game'
 require_relative '../lib/board'
-require_relative '../lib/player'
 
-class Game
-  def initialize
-    @players = []
-    @current_player = 0
-    set_players
-    create_board
-    start_session
-  end
+players = []
 
-  private
+def player_move(player, board)
+  show_board(board)
+  p "#{player.name} select a number to make move"
+  gets.chomp.to_i
+end
 
-  def set_players
-    while @players.length < 2
-      puts "Player #{@players.length + 1} enter your name: "
-      name = gets.chomp
-      @players << Player.new(name, character, @players)
-    end
-  end
+def show_board(board)
+  board.each { |row| p row }
+end
 
-  def character
-    @players.empty? ? 'X' : 'O'
-  end
-
-  def create_board
-    @board = Board.new
-  end
-
-  def start_session
-    create_board
-    status = 'its a tie!'
-    while @board.moves?
-      p @board.cells
-      p 'select your number to play'
-      number = gets.chomp.to_i
-      outcome = @board.move(number, @players[@current_player].character)
-      if outcome == 1
-        status = "#{@players[@current_player].name} won!"
-        break
-      elsif outcome == -1
-        status = "cell #{number} is not available, try again"
-      else
-        @current_player = @current_player == 1 ? 0 : 1
-      end
-    end
-    p status
+while players.length < 2
+  p "Player #{players.length + 1} enter your name: "
+  name = gets.chomp
+  if !name.empty?
+    players << name
+  else
+    p 'invalid name entered'
   end
 end
 
-Game.new
+game = Game.new(players)
+move = 0
+status = ''
+
+while move < 1
+  move = game.make_move(player_move(game.player, game.board))
+  if move == -1
+    p 'invalid cell selected'
+    move = 0
+  elsif move == 1
+    status = "#{game.player.name} won!"
+    break
+  else
+    status = 'Its a tie!'
+  end
+end
+
+p status
