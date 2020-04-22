@@ -62,17 +62,15 @@ class Board
   end
 
   def check_win_columns?(character)
-    (0..2).each { |j|
+    (0..2).each |j|
       count = 0
-      (0..2).each { |i|
+      (0..2).each |i|
         if @cells[i][j] == character
           count += 1
           return true if count == 3
         elsif count
           count -= 1
         end
-      }
-    }
     false
   end
 
@@ -116,6 +114,3 @@ class Board
     false
   end
 end
-
-
-

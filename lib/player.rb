@@ -9,7 +9,6 @@ class Player
 
     @name = name
     @character = character
-
   end
 
   def self.players
@@ -24,5 +23,3 @@ class Player
     end
   end
 end
-
-
