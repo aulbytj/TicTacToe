@@ -20,10 +20,11 @@ class Board
   end
 
   def draw
-    p @cells
+    @cells
   end
 
   def move(number, character)
+    return -2 unless moves?
     return -1 unless cell_available?(number)
 
     @cells.each do |row|
@@ -41,7 +42,7 @@ class Board
   end
 
   def moves?
-    return true if @moves < 9
+    return true if @moves <= 9
 
     false
   end
@@ -94,7 +95,6 @@ class Board
     i = @cells.length - 1
     j = 0
     while i >= 0
-      p @cells[j][i]
       if @cells[j][i] == character
         count += 1
         return true if count == 3
