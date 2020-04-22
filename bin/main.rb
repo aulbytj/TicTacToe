@@ -47,6 +47,8 @@ class Game
         break
       elsif outcome === -1
         p "cell #{number} is not available, try again"
+      elsif outcome === 0
+        p "its a tie!"
       else
         @current_player = @current_player == 1 ? 0 : 1
       end
