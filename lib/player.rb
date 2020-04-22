@@ -1,4 +1,5 @@
 class Player
+  @@players = []
   attr_reader :name
   attr_reader :character
 
