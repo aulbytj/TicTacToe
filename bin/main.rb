@@ -15,15 +15,15 @@ class Game
   private
 
   def set_players
-    while Player.players.length < 2
-      puts "Player #{Player.players.length + 1} enter your name: "
+    while @players.length < 2
+      puts "Player #{@players.length + 1} enter your name: "
       name = gets.chomp
-      Player.players << Player.new(name, character)
+      @players << Player.new(name, character, @players)
     end
   end
 
   def character
-    Player.players.empty? ? 'X' : 'O'
+    @players.empty? ? 'X' : 'O'
   end
 
   def create_board
@@ -37,9 +37,9 @@ class Game
       p @board.cells
       p 'select your number to play'
       number = gets.chomp.to_i
-      outcome = @board.move(number, Player.players[@current_player].character)
+      outcome = @board.move(number, @players[@current_player].character)
       if outcome == 1
-        status = "#{Player.players[@current_player].name} won!"
+        status = "#{@players[@current_player].name} won!"
         break
       elsif outcome == -1
         status = "cell #{number} is not available, try again"
