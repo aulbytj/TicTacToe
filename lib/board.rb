@@ -3,16 +3,16 @@ class Board
 
   def initialize
     @cells = [
-      [1, 2, 3],
-      [4, 5, 6],
-      [7, 8, 9]
+        %w[1 2 3],
+        %w[4 5 6],
+        %w[7 8 9]
     ]
 
-    @moves = 0
+    @moves = 1
   end
 
   def cell_available?(number)
-    false if number < 1 || number > 9
+    false if number.to_i < 1 || number.to_i > 9
     @cells.each do |row|
       row.each { |cell| return true if cell == number }
     end
@@ -20,7 +20,12 @@ class Board
   end
 
   def draw
-    @cells
+    drawing = ''
+    @cells.each do |row|
+      row.each { |number| drawing += "| #{number} " }
+      drawing += "| \n"
+    end
+    drawing
   end
 
   def move(number, character)
@@ -42,7 +47,7 @@ class Board
   end
 
   def moves?
-    return true if @moves <= 9
+    return true if @moves < 9
 
     false
   end
