@@ -5,14 +5,8 @@ require_relative '../lib/board'
 
 players = []
 
-def player_move(player, board)
-  show_board(board)
-  p "#{player.name} select a number to make move"
+def input
   gets.chomp
-end
-
-def show_board(board)
-  board.each { |row| p row }
 end
 
 while players.length < 2
@@ -30,7 +24,9 @@ move = 0
 status = ''
 
 while move < 1
-  move = game.make_move(player_move(game.player, game.board))
+  puts game.board
+  p "#{game.player.name} select a number to make move"
+  move = game.make_move(input)
   if move == -1
     p 'invalid cell selected'
     move = 0
@@ -43,5 +39,5 @@ while move < 1
   end
 end
 
-show_board(game.board)
+puts game.board
 p status
