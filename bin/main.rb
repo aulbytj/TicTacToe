@@ -8,7 +8,7 @@ players = []
 def player_move(player, board)
   show_board(board)
   p "#{player.name} select a number to make move"
-  gets.chomp.to_i
+  gets.chomp
 end
 
 def show_board(board)
@@ -37,9 +37,11 @@ while move < 1
   elsif move == 1
     status = "#{game.player.name} won!"
     break
-  else
+  elsif move == -2
     status = 'Its a tie!'
+    break
   end
 end
 
+show_board(game.board)
 p status
