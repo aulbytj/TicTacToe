@@ -50,7 +50,6 @@ would have Win the game.
 3. If neither Player was able to Win\
 the game will result in a Draw/Tie.
 
-
 ## Authors
 
 👤 **Aulbourn Knowles**
