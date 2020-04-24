@@ -3,9 +3,9 @@ class Board
 
   def initialize
     @cells = [
-      %w[1 2 3],
-      %w[4 5 6],
-      %w[7 8 9]
+        %w[1 2 3],
+        %w[4 5 6],
+        %w[7 8 9]
     ]
 
     @moves = 1
@@ -29,7 +29,6 @@ class Board
   end
 
   def move(number, character)
-    return -2 unless moves?
     return -1 unless cell_available?(number)
 
     @cells.each do |row|
@@ -43,11 +42,13 @@ class Board
         end
       end
     end
+    return -2 unless moves?
+
     0
   end
 
   def moves?
-    return true if @moves < 9
+    return true if @moves <= 9
 
     false
   end
