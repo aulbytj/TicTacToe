@@ -39,4 +39,11 @@ describe Board do
       expect(board.move('3', 'X')).to eql(1)
     end
   end
+
+  describe '#moves?' do
+    it 'should return true' do
+      board = Board.new
+      expect(board.moves?).to eql(true)
+    end
+  end
 end
