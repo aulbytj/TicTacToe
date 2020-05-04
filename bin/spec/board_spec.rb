@@ -45,5 +45,11 @@ describe Board do
       board = Board.new
       expect(board.moves?).to eql(true)
     end
+
+    it 'should return false' do
+      board = Board.new
+      board.moves = 10
+      expect(board.moves?).to eql(false)
+    end
   end
 end
