@@ -31,5 +31,12 @@ describe Board do
       board.moves = 9
       expect(board.move('5', 'X')).to eql(-2)
     end
+
+    it 'should return 1' do
+      board = Board.new
+      board.move('1', 'X')
+      board.move('2', 'X')
+      expect(board.move('3', 'X')).to eql(1)
+    end
   end
 end
