@@ -1,5 +1,6 @@
 class Board
   attr_reader :cells
+  attr_writer :moves
 
   def initialize
     @cells = [
