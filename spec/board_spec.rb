@@ -47,12 +47,12 @@ describe Board do
   end
 
   describe '#moves?' do
-    it 'should return true' do
+    it 'should return true if there are moves to make' do
       board = Board.new
       expect(board.moves?).to eql(true)
     end
 
-    it 'should return false' do
+    it 'should return false there are no moves to make' do
       board = Board.new
       board.moves = 10
       expect(board.moves?).to eql(false)
