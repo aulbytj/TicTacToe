@@ -22,23 +22,23 @@ describe Board do
   end
 
   describe '#move' do
-    it 'should return 0' do
+    it 'should return 0 if the move did not result in a win' do
       board = Board.new
       expect(board.move('1', 'X')).to eql(0)
     end
 
-    it 'should return -1' do
+    it 'should return -1 if the cell is not available' do
       board = Board.new
       expect(board.move('0', 'X')).to eql(-1)
     end
 
-    it 'should return -2' do
+    it 'should return -2 if there are no more moves to make' do
       board = Board.new
       board.moves = 9
       expect(board.move('5', 'X')).to eql(-2)
     end
 
-    it 'should return 1' do
+    it 'should return 1 if the move results in a win' do
       board = Board.new
       board.move('1', 'X')
       board.move('2', 'X')
