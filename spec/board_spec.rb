@@ -114,7 +114,31 @@ describe Board do
   end
 
   describe '#check_win?' do
-    it 'should return true if the move resulted in a win' do
+    it 'should return true if the move resulted in a win on a row' do
+      board = Board.new
+      board.move('1', 'X')
+      board.move('2', 'X')
+      board.move('3', 'X')
+      expect(board.check_win?('X')).to be(true)
+    end
+
+    it 'should return true if the move resulted in a win on a row' do
+      board = Board.new
+      board.move('1', 'X')
+      board.move('4', 'X')
+      board.move('7', 'X')
+      expect(board.check_win?('X')).to be(true)
+    end
+
+    it 'should return true if the move resulted in a win diagonally' do
+      board = Board.new
+      board.move('1', 'X')
+      board.move('5', 'X')
+      board.move('9', 'X')
+      expect(board.check_win?('X')).to be(true)
+    end
+
+    it 'should return true if the move resulted in a win diagonally in the reverse' do
       board = Board.new
       board.move('3', 'X')
       board.move('5', 'X')
