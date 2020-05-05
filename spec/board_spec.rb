@@ -15,7 +15,7 @@ describe Board do
   end
 
   describe '#draw' do
-    it 'should return string' do
+    it 'should return the game board' do
       board = Board.new
       expect(board.draw).to eql("| 1 | 2 | 3 | \n| 4 | 5 | 6 | \n| 7 | 8 | 9 | \n")
     end
