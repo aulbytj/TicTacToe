@@ -1,4 +1,6 @@
+
 AllCops:
+  EnabledByDefault: true
   Exclude:
     - "README.md"
     - "Guardfile"
@@ -6,32 +8,20 @@ AllCops:
 
   DisplayCopNames: true
 
-Style/HashEachMethods:
-  Enabled: false
-Style/HashTransformKeys:
-  Enabled: false
-Style/HashTransformValues:
-  Enabled: false
-
 Layout/LineLength:
-  Enabled: false
+  Max: 120
 Metrics/MethodLength:
-  Max: 200
+  Max: 20
 Metrics/AbcSize:
-  Max: 500
+  Max: 50
 Metrics/ClassLength:
-  Max: 1500
+  Max: 150
 Metrics/BlockLength:
-  ExcludedMethods: ["describe"]
-  Max: 300
-Metrics/CyclomaticComplexity:
-  Enabled: false
-Metrics/PerceivedComplexity:
-  Enabled: false
+  ExcludedMethods: ['describe']
+  Max: 30
+
 
 Style/Documentation:
-  Enabled: false
-Style/IfUnlessModifier:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
@@ -43,33 +33,21 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
-Style/OptionalArguments:
-  Enabled: false
-Style/GlobalVars:
-  Enabled: false
-Style/Next:
-  Enabled: false
-Style/GuardClause:
-  Enabled: false
-Style/ClassVars:
-  Enabled: false
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:
   AllowForAlignment: false
-Layout/IndentationWidth:
-    Enabled: false
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
-Naming/VariableNumber:
+Style/Copyright:
   Enabled: false
-Layout/SpaceAroundMethodCallOperator:
+Style/DocumentationMethod:
   Enabled: false
-Lint/RaiseException:
+Style/InlineComment:
   Enabled: false
-Lint/StructNewOverride:
+Style/MissingElse:
   Enabled: false
-Style/ExponentialNotation:
+Style/MethodCalledOnDoEndBlock:
   Enabled: false
