@@ -2,9 +2,15 @@ require_relative '../lib/board'
 
 describe Board do
   describe '#cell_available?' do
-    it 'should return true' do
+    it 'should return true if the cell is available' do
       board = Board.new
       expect(board.cell_available?('1')).to eql(true)
+    end
+
+    it 'should return false if the cell is not available' do
+      board = Board.new
+      board.move('1', 'O')
+      expect(board.cell_available?('1')).to eql(false)
     end
   end
 
