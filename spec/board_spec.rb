@@ -67,4 +67,19 @@ describe Board do
       expect(board.check_win_rows?('X')).to be(true)
     end
   end
+
+  describe '#check_win_columns?' do
+    it 'should return false if the move did not result in a win' do
+      board = Board.new
+      expect(board.check_win_columns?('X')).to be(false)
+    end
+
+    it 'should return true if the move resulted in a win' do
+      board = Board.new
+      board.move('1', 'X')
+      board.move('4', 'X')
+      board.move('7', 'X')
+      expect(board.check_win_columns?('X')).to be(true)
+    end
+  end
 end
