@@ -3,21 +3,27 @@ AllCops:
     - "README.md"
     - "Guardfile"
     - "Rakefile"
+    - "./spec/spec_helper.rb"
 
   DisplayCopNames: true
 
 Layout/LineLength:
-  Max: 120
-Metrics/MethodLength:
-  Max: 20
-Metrics/AbcSize:
-  Max: 50
-Metrics/ClassLength:
   Max: 150
+Metrics/MethodLength:
+  Max: 100
+Metrics/AbcSize:
+  Max: 200
+Metrics/ClassLength:
+  Max: 300
 Metrics/BlockLength:
-  ExcludedMethods: ['describe']
+  ExcludedMethods: ["describe"]
   Max: 30
-
+Metrics/ModuleLength:
+  Max: 500
+Metrics/CyclomaticComplexity:
+  Max: 50
+Metrics/PerceivedComplexity:
+  Max: 40
 
 Style/Documentation:
   Enabled: false
@@ -39,13 +45,3 @@ Layout/ExtraSpacing:
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
-Lint/RaiseException:
-  Enabled: false
-Lint/StructNewOverride:
-  Enabled: false
-Style/HashEachMethods:
-  Enabled: false
-Style/HashTransformKeys:
-  Enabled: false
-Style/HashTransformValues:
-  Enabled: false
