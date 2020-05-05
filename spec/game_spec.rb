@@ -30,6 +30,24 @@ describe Game do
     end
   end
 
+  describe '#make_move' do
+    it 'should return 0 if the move did not result in a win' do
+      expect(game.make_move('1')).to eql(0)
+    end
+
+    it 'should return -1 if the cell is not available' do
+      expect(game.make_move('0')).to eql(-1)
+    end
+
+    it 'should return 1 if the move results in a win' do
+      game.make_move('1')
+      game.make_move('4')
+      game.make_move('2')
+      game.make_move('5')
+      expect(game.make_move('3')).to eql(1)
+    end
+  end
+
   describe '#switch_player' do
     it 'should return the index of the second player: 1' do
       expect(game.switch_player).to eql(1)
