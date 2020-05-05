@@ -97,4 +97,19 @@ describe Board do
       expect(board.check_win_diagonals?('X')).to be(true)
     end
   end
+
+  describe '#check_win_rev_diagonals?' do
+    it 'should return false if the move did not result in a win' do
+      board = Board.new
+      expect(board.check_win_rev_diagonals?('X')).to be(false)
+    end
+
+    it 'should return true if the move resulted in a win' do
+      board = Board.new
+      board.move('3', 'X')
+      board.move('5', 'X')
+      board.move('7', 'X')
+      expect(board.check_win_rev_diagonals?('X')).to be(true)
+    end
+  end
 end
