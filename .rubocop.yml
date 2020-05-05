@@ -3,29 +3,35 @@ AllCops:
     - "README.md"
     - "Guardfile"
     - "Rakefile"
-    - "./spec/spec_helper.rb"
 
   DisplayCopNames: true
 
+Style/HashEachMethods:
+  Enabled: false
+Style/HashTransformKeys:
+  Enabled: false
+Style/HashTransformValues:
+  Enabled: false
+
 Layout/LineLength:
-  Max: 150
+  Enabled: false
 Metrics/MethodLength:
-  Max: 100
-Metrics/AbcSize:
   Max: 200
+Metrics/AbcSize:
+  Max: 500
 Metrics/ClassLength:
-  Max: 300
+  Max: 1500
 Metrics/BlockLength:
   ExcludedMethods: ["describe"]
-  Max: 30
-Metrics/ModuleLength:
-  Max: 500
+  Max: 300
 Metrics/CyclomaticComplexity:
-  Max: 50
+  Enabled: false
 Metrics/PerceivedComplexity:
-  Max: 40
+  Enabled: false
 
 Style/Documentation:
+  Enabled: false
+Style/IfUnlessModifier:
   Enabled: false
 Style/ClassAndModuleChildren:
   Enabled: false
@@ -37,14 +43,28 @@ Style/DefWithParentheses:
   Enabled: false
 Style/FrozenStringLiteralComment:
   EnforcedStyle: never
+Style/OptionalArguments:
+  Enabled: false
+Style/GlobalVars:
+  Enabled: false
+Style/Next:
+  Enabled: false
+Style/GuardClause:
+  Enabled: false
+Style/ClassVars:
+  Enabled: false
 
 Layout/HashAlignment:
   EnforcedColonStyle: key
 Layout/ExtraSpacing:
   AllowForAlignment: false
+Layout/IndentationWidth:
+    Enabled: false
 Layout/MultilineMethodCallIndentation:
   Enabled: true
   EnforcedStyle: indented
+Naming/VariableNumber:
+  Enabled: false
 Layout/SpaceAroundMethodCallOperator:
   Enabled: false
 Lint/RaiseException:
@@ -52,10 +72,4 @@ Lint/RaiseException:
 Lint/StructNewOverride:
   Enabled: false
 Style/ExponentialNotation:
-  Enabled: false
-Style/HashEachMethods:
-  Enabled: false
-Style/HashTransformKeys:
-  Enabled: false
-Style/HashTransformValues:
   Enabled: false
