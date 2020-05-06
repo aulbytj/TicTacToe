@@ -2,7 +2,12 @@ require_relative('player')
 require_relative('board')
 
 class Game
-  public
+  def initialize(players)
+    @players = []
+    @current_player = 0
+    players(players)
+    create_board
+  end
 
   def moves?
     @board.moves?
@@ -24,13 +29,6 @@ class Game
 
   def player
     @players[@current_player]
-  end
-
-  def initialize(players)
-    @players = []
-    @current_player = 0
-    players(players)
-    create_board
   end
 
   private
