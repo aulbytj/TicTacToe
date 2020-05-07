@@ -46,7 +46,7 @@ rspec --help
 
 ### Run Test
 
-Navigate to the bin directory ` TicTacToe/bin ` in the terminal and run
+Navigate to the root directory ` TicTacToe/ ` in the terminal and run
 
 ```
 rspec
