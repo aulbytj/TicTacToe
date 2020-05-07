@@ -1,7 +1,7 @@
 require_relative('../lib/board')
 
 describe Board do
-  let(:board) {Board.new}
+  let(:board) { Board.new }
   describe '#cell_available?' do
     it 'should return true if the cell is available' do
       expect(board.cell_available?('1')).to(eql(true))
