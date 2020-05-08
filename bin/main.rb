@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
-require_relative '../lib/game'
-require_relative '../lib/board'
+require_relative('../lib/game')
+require_relative('../lib/board')
 
 players = []
 
@@ -10,12 +10,12 @@ def input
 end
 
 while players.length < 2
-  p "Player #{players.length + 1} enter your name: "
+  p("Player #{players.length + 1} enter your name: ")
   name = gets.chomp
   if !name.empty?
     players << name
   else
-    p 'invalid name entered'
+    p('invalid name entered')
   end
 end
 
@@ -24,11 +24,11 @@ move = 0
 status = ''
 
 while move < 1
-  puts game.board
-  p "#{game.player.name} select a number to make move"
+  puts(game.board)
+  p("#{game.player.name} select a number to make move")
   move = game.make_move(input)
   if move == -1
-    p 'invalid cell selected'
+    p('invalid cell selected')
     move = 0
   elsif move == 1
     status = "#{game.player.name} won!"
@@ -39,5 +39,5 @@ while move < 1
   end
 end
 
-puts game.board
-p status
+puts(game.board)
+p(status)

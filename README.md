@@ -6,12 +6,14 @@
 ## Built With
 
 - Ruby
+- Tested with RSpec
 
 ## Getting Started
 
 ### Prerequisites
 
-Mac or linux operating system and have Ruby installed
+Mac or linux operating system and have Ruby installed.\
+To test, RSpec must be installed.
 
 
 ### Installation
@@ -24,6 +26,34 @@ cd TicTacToe
 bin/main.rb
 
 ```
+To install RSpec open terminal and enter the following
+
+```
+gem install rspec
+```
+
+To check the version of RSpec that was installed
+
+```
+rspec --version
+```
+
+Take a minute and look through the various options available in rspec
+
+```
+rspec --help
+```
+
+### Run Test
+
+Navigate to the root directory ` TicTacToe/ ` in the terminal and run
+
+```
+rspec
+```
+
+
+
 ### Instructions
 
 The objective of the game is to get three (3) consecutive moves before your opponent.
@@ -76,7 +106,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Microverse, TSE's, Rubymine IDE NeoVim
+- Microverse, TSE's, Rubymine IDE, NeoVim
 
 ## 📝 License
 

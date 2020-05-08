@@ -1,5 +1,6 @@
 class Board
   attr_reader :cells
+  attr_writer :moves
 
   def initialize
     @cells = [
@@ -12,7 +13,7 @@ class Board
   end
 
   def cell_available?(number)
-    false if number.to_i < 1 || number.to_i > 9
+    false if Integer(number, 10) < 1 || Integer(number, 10) > 9
     @cells.each do |row|
       row.each { |cell| return true if cell == number }
     end

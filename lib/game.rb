@@ -1,5 +1,5 @@
-require_relative 'player'
-require_relative 'board'
+require_relative('player')
+require_relative('board')
 
 class Game
   def initialize(players)
@@ -8,24 +8,6 @@ class Game
     players(players)
     create_board
   end
-
-  private
-
-  def players(players)
-    players.each do |player|
-      @players << Player.new(player, character)
-    end
-  end
-
-  def character
-    @players.length == 1 ? 'O' : 'X'
-  end
-
-  def create_board
-    @board = Board.new
-  end
-
-  public
 
   def moves?
     @board.moves?
@@ -47,5 +29,21 @@ class Game
 
   def player
     @players[@current_player]
+  end
+
+  private
+
+  def players(players)
+    players.each do |player|
+      @players << Player.new(player, character)
+    end
+  end
+
+  def character
+    @players.length == 1 ? 'O' : 'X'
+  end
+
+  def create_board
+    @board = Board.new
   end
 end
